@@ -246,6 +246,7 @@ public class RpgGuilds extends JavaPlugin implements Listener {
 			Integer kills = getConfig().getInt("Kills." + pl.getName());
 			kills++;
 			getConfig().set("Kills." + pl.getName(), kills);
+            saveConfig();
 		}
 
 	}
@@ -349,7 +350,7 @@ public class RpgGuilds extends JavaPlugin implements Listener {
 				String guild = getConfig().getString(player.getName() + ".Guild.Name");
 				String tag = getConfig().getString("Guilds." + guild + ".Tag");
 				if (getConfig().getBoolean("Chat") == true){
-					event.setMessage("§F[§2" + tag + "§f] " + event.getMessage());
+					event.setMessage("ï¿½F[ï¿½2" + tag + "ï¿½f] " + event.getMessage());
 				}
 			}
 		}
@@ -376,7 +377,7 @@ public class RpgGuilds extends JavaPlugin implements Listener {
 						}
 					} else {
 						Player p = Bukkit.getPlayer(key);
-						p.sendMessage("§3" + player.getName() + "§2 Has come online!");
+						p.sendMessage("ï¿½3" + player.getName() + "ï¿½2 Has come online!");
 					}
 				}
 
@@ -447,7 +448,7 @@ public class RpgGuilds extends JavaPlugin implements Listener {
 			for (String key : getConfig().getConfigurationSection("Guilds." + guild + ".Players").getKeys(false)){
 				if (Bukkit.getPlayer(key) != null){
 					Player p = Bukkit.getPlayer(key);
-					p.sendMessage("§3" + player.getName() + "§2 Has gone offline!");
+					p.sendMessage("ï¿½3" + player.getName() + "ï¿½2 Has gone offline!");
 
 				}
 
